@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Icon Creator</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/leonardo.css" rel="stylesheet">
+</head>
+
+<body ng-controller="leonardoController">
+    <div class="container">
+        <h1 class="app-name">Leonardo</h1>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <div class="panel panel-default  canvas-container">
+                            <!--
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Canvas</h3>
+                    </div>
+-->
+                            <div class="panel-body">
+                                <canvas id="iconCanvas" class="icon-canvas center-block">
+                                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="panel panel-default">
+                            <!--
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Canvas</h3>
+                    </div>
+-->
+                            <div class="panel-body brushes-parent">
+                                <div class="brushes">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="2">
+                                                    <img src="images/brush1.png" class="brush" ng-click="selectTool(tools.brush)" ng-class="isToolSelected(tools.brush)">
+                                                </td>
+                                                <td rowspan="2">
+                                                    <img src="images/pencil.png" class="pencil" ng-click="selectTool(tools.pencil)" ng-class="isToolSelected(tools.pencil)">
+                                                </td>
+                                                <td>
+                                                    <img src="images/eraser.png" class="eraser" ng-click="selectTool(tools.eraser)" ng-class="isToolSelected(tools.eraser)">
+                                                </td>
+                                                <td>
+                                                    <img src="images/sharpener.png" class="sharpener" ng-click="selectTool(tools.sharpener)" ng-class="isToolSelected(tools.sharpener)">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" rowspan="2" class="vertical-center text-center">
+                                                    <div>
+                                                        <img src="images/floppy.png" class="floppy" ng-click="selectTool(tools.floppy)" ng-class="isToolSelected(tools.floppy)">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--                                    <img src="images/eraser.png" class="eraser">-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-2 col-sm-1" ng-repeat="color in colors track by $index" ng-click="selectColor(color)">
+                                        <div class="color" ng-style="setBgColor(color.hex)" ng-class="isSelected(color)">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!--JavaScript Libraries-->
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+body {
+    background-image: url("../images/background-cloth.jpg");
+    background-size: cover;
+}
+.color {
+    height: 60px;
+    width: 100%;
+    border-top-left-radius: 55px;
+    border-bottom-right-radius: 55px;
+    /*    background-color: red;*/
+    opacity: 1;
+}
+.icon-canvas {
+    border: 1px dashed #A0A0A0;
+    width: 100%;
+    height: 100%;
+    cursor: url(../images/brush-pointer.png) 0 32, crosshair;
+}
+.brushes-parent {
+    height: 100%;
+}
+.brush,
+.pencil {
+    height: 409px;
+}
+.eraser {
+    width: 100%;
+}
+.sharpener {
+    width: 100%;
+}
+table {
+    width: 100%;
+}
+td {
+    vertical-align: top;
+}
+.vertical-center {
+    vertical-align: middle;
+}
+.brush,
+.pencil,
+.eraser,
+.sharpener,
+.floppy,
+.color {
+    cursor: move;
+}
+.app-name {
+    color: #FFFFFF;
+}
+@-webkit-keyframes wiggle {
+    0% {
+        -webkit-transform: rotate(0deg) scale(1);
+    }
+    25% {
+        -webkit-transform: rotate(5deg) scale(1.025);
+    }
+    50% {
+        -webkit-transform: rotate(0deg) scale(1);
+    }
+    75% {
+        -webkit-transform: rotate(-5deg) scale(1.02);
+    }
+    100% {
+        -webkit-transform: rotate(0deg) scale(1);
+    }
+}
+.selected {
+    -webkit-animation-name: wiggle;
+    -webkit-animation-duration: 1s;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes wiggle-small {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    25% {
+        -webkit-transform: rotate(2deg);
+    }
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    75% {
+        -webkit-transform: rotate(-2deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+    }
+}
+.selected-tool {
+    -webkit-animation-name: wiggle-small;
+    -webkit-animation-duration: 1s;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
