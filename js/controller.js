@@ -2,7 +2,7 @@ function leonardoController($scope) {
     $scope.colors = [
         {
             "hex": "#000000",
-            "selected": false
+            "selected": true
         },
         {
             "hex": "#000066",
@@ -50,7 +50,7 @@ function leonardoController($scope) {
         }
     ];
 
-    $scope.selectedColor = null;
+    $scope.selectedColor = $scope.colors[0];
 
     $scope.setBgColor = function (color) {
         return {
@@ -72,11 +72,13 @@ function leonardoController($scope) {
         }
         $scope.selectedColor = color;
         $scope.selectedColor.selected = true;
+        $('#drawing-color').val($scope.selectedColor.hex);
+        somethingChanged();
     }
 
     $scope.tools = {
         "brush": {
-            "selected": false
+            "selected": true
         },
         "pencil": {
             "selected": false
@@ -91,16 +93,27 @@ function leonardoController($scope) {
             "selected": false
         }
     };
-    $scope.selectedTool = null;
+    $scope.selectedTool = $scope.tools.brush;
     $scope.selectTool = function (tool) {
         if ($scope.selectedTool != null) {
             $scope.selectedTool.selected = false;
         }
         $scope.selectedTool = tool;
         $scope.selectedTool.selected = true;
+        if ($scope.selectedTool == $scope.tools.brush) {
+            $('#drawing-line-width').val("25");
+            $('#drawing-color').val($scope.selectedColor.hex);
+        } else if ($scope.selectedTool == $scope.tools.pencil) {
+            $('#drawing-line-width').val("1");
+            $('#drawing-color').val($scope.selectedColor.hex);
+        } else if ($scope.selectedTool == $scope.tools.eraser) {
+            $('#drawing-line-width').val("25");
+            $('#drawing-color').val("#FFFFFF");
+        }
+        somethingChanged();
     }
-    $scope.isToolSelected = function(tool){
-        if(tool.selected){
+    $scope.isToolSelected = function (tool) {
+        if (tool.selected) {
             return "selected-tool";
         }
         return "";
