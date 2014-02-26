@@ -71,12 +71,34 @@ td {
         -webkit-transform: rotate(0deg) scale(1);
     }
 }
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(5deg) scale(1.025);
+    }
+    50% {
+        transform: rotate(0deg) scale(1);
+    }
+    75% {
+        transform: rotate(-5deg) scale(1.02);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
 .selected {
     -webkit-animation-name: wiggle;
     -webkit-animation-duration: 1s;
     -webkit-transform-origin: 50% 50%;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
+    animation-name: wiggle;
+    animation-duration: 1s;
+    transform-origin: 50% 50%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 @-webkit-keyframes wiggle-small {
     0% {
@@ -95,10 +117,32 @@ td {
         -webkit-transform: rotate(0deg);
     }
 }
+@keyframes wiggle-small {
+    0% {
+       transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(2deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
 .selected-tool {
     -webkit-animation-name: wiggle-small;
     -webkit-animation-duration: 1s;
     -webkit-transform-origin: 50% 50%;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
+    animation-name: wiggle-small;
+    animation-duration: 1s;
+    transform-origin: 50% 50%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
