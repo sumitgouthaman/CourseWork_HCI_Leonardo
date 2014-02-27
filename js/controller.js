@@ -95,6 +95,10 @@ function leonardoController($scope) {
     };
     $scope.selectedTool = $scope.tools.brush;
     $scope.selectTool = function (tool) {
+        if (tool == $scope.tools.sharpener) {
+            $scope.adjustSharpness();
+            return;
+        }
         if ($scope.selectedTool != null) {
             $scope.selectedTool.selected = false;
         }
@@ -117,5 +121,8 @@ function leonardoController($scope) {
             return "selected-tool";
         }
         return "";
+    }
+    $scope.adjustSharpness = function () {
+        $('#widthModal').modal();
     }
 }
